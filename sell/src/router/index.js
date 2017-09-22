@@ -1,15 +1,20 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Hello from '@/components/Hello';
+// 导入组件
+import Header from '@/components/header/header';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      components: {
+        default: Hello,
+        // 注册组件，命名为Header
+        Header: Header
+      }
     }
   ]
-})
+});
